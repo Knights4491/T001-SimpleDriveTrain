@@ -36,6 +36,8 @@ public class  SDT_JoystickDrive extends Command {
     protected void execute() {
         Robot.simpleDriveTrain.Drive(Robot.oi.m_joyDriverTwoThumbs.getRawAxis(1),
                                      Robot.oi.m_joyDriverTwoThumbs.getRawAxis(2));
+        Robot.simpleDriveTrain.Drive(0.5 * Robot.oi.m_joyDriverTwoThumbs.getRawAxis(1),
+                                     0.5 * Robot.oi.m_joyDriverTwoThumbs.getRawAxis(2));
     }
 
     // Make this return true when this Command no longer needs to run execute()
