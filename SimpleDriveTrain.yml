@@ -13,7 +13,7 @@ Children:
     - Name: 4WheelDrive
       Base: Robot Drive 4
       Children:
-      - Name: LeftFrontMotor
+      - Name: m_vicLeftFront
         Base: Speed Controller
         Children: []
         Properties:
@@ -35,7 +35,7 @@ Children:
             name: Output Channel (PWM)
             validators: &id005 [PWMOutput]
             value: '1'
-      - Name: LeftRearMotor
+      - Name: m_vicLeftRear
         Base: Speed Controller
         Children: []
         Properties:
@@ -57,7 +57,7 @@ Children:
             name: Output Channel (PWM)
             validators: *id005
             value: '2'
-      - Name: RightFrontMotor
+      - Name: m_vicRightFront
         Base: Speed Controller
         Children: []
         Properties:
@@ -79,7 +79,7 @@ Children:
             name: Output Channel (PWM)
             validators: *id005
             value: '3'
-      - Name: RightRearMotor
+      - Name: m_vicRightRear
         Base: Speed Controller
         Children: []
         Properties:
@@ -115,7 +115,7 @@ Children:
           name: Right Front Motor
           type: PIDOutput
           validators: [RobotDrive4, ChildDropdownSelected]
-          value: SimpleDriveTrain RightFrontMotor
+          value: SimpleDriveTrain m_vicRightFront
         Maximum Output: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Maximum Output, validators: null, value: 1.0}
         Right Rear Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {
@@ -127,29 +127,29 @@ Children:
           name: Right Rear Motor
           type: PIDOutput
           validators: [RobotDrive4, ChildDropdownSelected]
-          value: SimpleDriveTrain RightRearMotor
+          value: SimpleDriveTrain m_vicRightRear
         Left Rear Motor: !!robotbuilder.data.properties.ChildSelectionProperty
           default: 1
           name: Left Rear Motor
           type: PIDOutput
           validators: [RobotDrive4, ChildDropdownSelected]
-          value: SimpleDriveTrain LeftRearMotor
+          value: SimpleDriveTrain m_vicLeftRear
         Left Front Motor: !!robotbuilder.data.properties.ChildSelectionProperty
           default: 0
           name: Left Front Motor
           type: PIDOutput
           validators: [RobotDrive4, ChildDropdownSelected]
-          value: SimpleDriveTrain LeftFrontMotor
+          value: SimpleDriveTrain m_vicLeftFront
         Safety Expiration Time: !!robotbuilder.data.properties.DoubleProperty {default: 0.1,
           name: Safety Expiration Time, validators: null, value: 0.1}
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: None}
+        name: Default Command, type: Command, validators: null, value: SDT_JoystickDrive}
   Properties: {}
 - Name: Operator Interface
   Base: OI
   Children:
-  - Name: DriverGameJoystick
+  - Name: m_joyDriverTwoThumbs
     Base: Joystick
     Children: []
     Properties:
@@ -199,7 +199,7 @@ Properties:
   Use Default Java Package: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Use Default Java Package, validators: null, value: true}
   Java Package: !!robotbuilder.data.properties.StringProperty {default: org.usfirst.frc0000,
-    name: Java Package, validators: null, value: org.usfirst.frc0000}
+    name: Java Package, validators: null, value: org.usfirst.frc4491}
   Export Subsystems: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Subsystems, validators: null, value: true}
   Team Number: !!robotbuilder.data.properties.IntegerProperty {default: 0, name: Team Number,
